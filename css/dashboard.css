@@ -1,0 +1,745 @@
+
+/* =========================================
+   ROAVENA — TRIP BUILDER
+========================================= */
+
+:root {
+    --db-green: #173f35;
+    --db-deep: #102e27;
+    --db-gold: #c5a46d;
+    --db-cream: #f7f4ec;
+    --db-muted: #73776e;
+    --db-border: #e4dfd3;
+}
+
+/* PAGE */
+
+body {
+    background: var(--db-cream);
+}
+
+.trip-builder-page {
+    width: 100%;
+    overflow: hidden;
+}
+
+/* HERO */
+
+.builder-hero {
+    padding: 85px 20px 65px;
+    text-align: center;
+    background: var(--db-green);
+    color: white;
+}
+
+.builder-hero .eyebrow {
+    color: #e8c98e;
+    font-size: 11px;
+    letter-spacing: 3px;
+    font-weight: 600;
+}
+
+.builder-hero h1 {
+    font-family: "Playfair Display", serif;
+    font-size: clamp(38px, 6vw, 65px);
+    line-height: 1.2;
+    margin: 18px 0;
+    color: white;
+}
+
+.builder-hero h1 span {
+    color: #e8c98e;
+}
+
+.builder-hero > p {
+    max-width: 620px;
+    margin: auto;
+    color: #e8e8df;
+    font-size: 14px;
+    line-height: 1.9;
+}
+
+.builder-progress {
+    margin-top: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    color: #e8c98e;
+    font-size: 10px;
+    letter-spacing: 2px;
+}
+
+.progress-line {
+    width: 45px;
+    height: 1px;
+    background: var(--db-gold);
+}
+
+/* FORM CONTAINER */
+
+.trip-form-section {
+    max-width: 1050px;
+    margin: 65px auto;
+    padding: 55px 65px;
+    background: #fffdf8;
+    border: 1px solid var(--db-border);
+    border-radius: 18px;
+    box-shadow: 0 18px 55px rgba(23, 63, 53, 0.07);
+}
+
+/* SECTION HEADINGS */
+
+.form-section-heading {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    margin: 45px 0 28px;
+}
+
+.form-section-heading:first-child {
+    margin-top: 0;
+}
+
+.form-section-heading > span {
+    min-width: 43px;
+    height: 43px;
+    display: grid;
+    place-items: center;
+    background: var(--db-green);
+    color: #e8c98e;
+    border-radius: 50%;
+    font-size: 13px;
+}
+
+.form-section-heading h2 {
+    font-family: "Playfair Display", serif;
+    font-size: 27px;
+    color: var(--db-green);
+    margin: 0 0 6px;
+}
+
+.form-section-heading p {
+    color: var(--db-muted);
+    font-size: 12px;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* FORM GRID */
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+    min-width: 0;
+}
+
+.form-group.full-width {
+    width: 100%;
+}
+
+.form-group label {
+    color: var(--db-green);
+    font-size: 13px;
+    font-weight: 600;
+}
+
+/* INPUTS */
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 15px 16px;
+    border: 1px solid var(--db-border);
+    border-radius: 8px;
+    background: #fff;
+    color: #263b32;
+    font-family: "DM Sans", sans-serif;
+    font-size: 13px;
+    outline: none;
+    transition: 0.25s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: var(--db-gold);
+    box-shadow: 0 0 0 3px rgba(197, 164, 109, 0.12);
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: #a2a49c;
+}
+
+.form-group input[readonly] {
+    background: #f2efe6;
+    color: #73776e;
+    cursor: not-allowed;
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 130px;
+    line-height: 1.7;
+}
+
+/* ACTIVITY OPTIONS */
+
+.activity-options {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 13px;
+}
+
+.activity-option {
+    cursor: pointer;
+}
+
+.activity-option input {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.activity-option span {
+    min-height: 58px;
+    padding: 12px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border: 1px solid var(--db-border);
+    border-radius: 9px;
+    background: #fff;
+    color: var(--db-green);
+    font-size: 12px;
+    transition: 0.25s ease;
+}
+
+.activity-option:hover span {
+    border-color: var(--db-gold);
+}
+
+.activity-option input:checked + span {
+    background: var(--db-green);
+    color: white;
+    border-color: var(--db-green);
+}
+
+.activity-option input:focus-visible + span {
+    outline: 2px solid var(--db-gold);
+    outline-offset: 3px;
+}
+
+/* SUBMIT AREA */
+
+.form-submit-area {
+    margin-top: 45px;
+    padding-top: 30px;
+    border-top: 1px solid var(--db-border);
+    text-align: center;
+}
+
+.form-submit-area p {
+    color: var(--db-muted);
+    font-size: 12px;
+    line-height: 1.7;
+    margin-bottom: 22px;
+}
+
+.form-submit-area .primary-button {
+    padding: 16px 35px;
+    border: none;
+    border-radius: 5px;
+    background: var(--db-green);
+    color: white;
+    font-family: "DM Sans", sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.form-submit-area .primary-button:hover {
+    background: var(--db-deep);
+    transform: translateY(-3px);
+}
+
+/* FOOTER */
+
+.trip-builder-page + .footer {
+    margin-top: 0;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 800px) {
+
+    .trip-form-section {
+        margin: 40px 20px;
+        padding: 40px 30px;
+    }
+
+    .activity-options {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+}
+
+@media (max-width: 550px) {
+
+    .builder-hero {
+        padding: 65px 20px 50px;
+    }
+
+    .trip-form-section {
+        margin: 25px 12px;
+        padding: 30px 20px;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .form-section-heading {
+        gap: 13px;
+    }
+
+    .form-section-heading h2 {
+        font-size: 23px;
+    }
+
+    .activity-options {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 9px;
+    }
+
+    .activity-option span {
+        font-size: 11px;
+        padding: 10px 5px;
+    }
+
+    .form-submit-area .primary-button {
+        width: 100%;
+    }
+
+}
+
+
+/* =========================================
+   ROAVENA — HOTEL & TRANSPORT OPTIONS
+========================================= */
+
+.travel-options-section {
+    max-width: 1050px;
+    margin: 65px auto;
+    padding: 55px 65px;
+    background: #fffdf8;
+    border: 1px solid var(--db-border);
+    border-radius: 18px;
+    box-shadow: 0 18px 55px rgba(23,63,53,0.07);
+}
+
+.travel-options-section[hidden] {
+    display: none;
+}
+
+.travel-section-intro {
+    text-align: center;
+    margin-bottom: 55px;
+}
+
+.travel-section-intro .eyebrow,
+.trip-cost-summary .eyebrow {
+    color: var(--db-gold);
+    font-size: 10px;
+    letter-spacing: 2px;
+    font-weight: 700;
+}
+
+.travel-section-intro h2 {
+    font-family: "Playfair Display", serif;
+    color: var(--db-green);
+    font-size: 36px;
+    margin: 15px 0;
+}
+
+.travel-section-intro h2 span {
+    color: var(--db-gold);
+}
+
+.travel-section-intro p {
+    color: var(--db-muted);
+    font-size: 13px;
+}
+
+.travel-category {
+    margin-top: 55px;
+}
+
+.travel-heading {
+    display: flex;
+    gap: 18px;
+    align-items: flex-start;
+    margin-bottom: 28px;
+}
+
+.travel-heading > span {
+    min-width: 43px;
+    height: 43px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    background: var(--db-green);
+    color: #e8c98e;
+    font-size: 13px;
+}
+
+.travel-heading h2 {
+    font-family: "Playfair Display", serif;
+    color: var(--db-green);
+    font-size: 25px;
+    margin: 0 0 6px;
+}
+
+.travel-heading p {
+    color: var(--db-muted);
+    font-size: 12px;
+    margin: 0;
+}
+
+/* HOTEL CARDS */
+
+.hotel-grid,
+.transport-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.travel-card {
+    border: 1px solid var(--db-border);
+    border-radius: 12px;
+    overflow: hidden;
+    background: white;
+    transition: 0.25s ease;
+}
+
+.travel-card:hover {
+    border-color: var(--db-gold);
+    transform: translateY(-3px);
+    box-shadow: 0 12px 25px rgba(23,63,53,0.08);
+}
+
+.travel-card.selected {
+    border: 2px solid var(--db-green);
+    background: #f6f5ed;
+}
+
+.travel-card-image {
+    min-height: 125px;
+    display: grid;
+    place-items: center;
+    background: linear-gradient(135deg, #173f35, #8d9b7d);
+    color: white;
+    font-size: 38px;
+}
+
+.travel-card-content {
+    padding: 20px;
+}
+
+.travel-card-content h3 {
+    color: var(--db-green);
+    font-family: "Playfair Display", serif;
+    font-size: 19px;
+    margin: 0 0 8px;
+}
+
+.travel-card-content p {
+    color: var(--db-muted);
+    font-size: 12px;
+    line-height: 1.7;
+}
+
+.travel-price {
+    color: var(--db-green);
+    font-size: 19px;
+    font-weight: 700;
+    margin: 15px 0;
+}
+
+.travel-price small {
+    font-size: 10px;
+    color: var(--db-muted);
+    font-weight: 400;
+}
+
+.travel-select-button {
+    width: 100%;
+    padding: 12px;
+    background: white;
+    border: 1px solid var(--db-green);
+    border-radius: 5px;
+    color: var(--db-green);
+    font-weight: 600;
+    cursor: pointer;
+    font-family: "DM Sans", sans-serif;
+    transition: 0.2s;
+}
+
+.travel-select-button:hover,
+.travel-card.selected .travel-select-button {
+    background: var(--db-green);
+    color: white;
+}
+
+/* COST SUMMARY */
+
+.trip-cost-summary {
+    margin-top: 60px;
+    padding: 35px;
+    background: var(--db-green);
+    color: white;
+    border-radius: 12px;
+}
+
+.trip-cost-summary h2 {
+    font-family: "Playfair Display", serif;
+    font-size: 27px;
+    margin: 12px 0 25px;
+}
+
+.cost-row,
+.cost-total {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    padding: 15px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.17);
+    font-size: 13px;
+}
+
+.cost-total {
+    border: none;
+    padding-top: 25px;
+    align-items: center;
+}
+
+.cost-total strong {
+    color: #e8c98e;
+    font-size: 27px;
+}
+
+.cost-disclaimer {
+    color: #d9ded6;
+    font-size: 11px;
+    line-height: 1.7;
+    margin-top: 15px;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 800px) {
+    .travel-options-section {
+        margin: 40px 20px;
+        padding: 35px 25px;
+    }
+}
+
+@media (max-width: 550px) {
+    .hotel-grid,
+    .transport-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .travel-options-section {
+        margin: 25px 12px;
+        padding: 28px 18px;
+    }
+
+    .travel-section-intro h2 {
+        font-size: 29px;
+    }
+
+    .trip-cost-summary {
+        padding: 25px 18px;
+    }
+}
+/* =========================================
+   ROAVENA — REAL TRAVEL PHOTOGRAPHS
+========================================= */
+
+.travel-card-image {
+    width: 100%;
+    height: 190px;
+    min-height: 190px;
+    overflow: hidden;
+    display: block;
+    background: #e8e4d9;
+}
+
+.travel-card-image img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 0.5s ease;
+}
+
+.travel-card:hover .travel-card-image img {
+    transform: scale(1.05);
+}
+
+@media (max-width: 550px) {
+    .travel-card-image {
+        height: 210px;
+    }
+}
+.travel-card-image span {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    place-items: center;
+    font-size: 38px;
+}
+
+
+/* =========================================
+   ROAVENA — BOOKING SUMMARY
+========================================= */
+
+.booking-summary {
+    margin-top: 35px;
+    padding: 40px;
+    background: #f7f4ec;
+    border: 1px solid #e4dfd3;
+    border-radius: 14px;
+    box-shadow: 0 12px 35px rgba(23, 63, 53, 0.06);
+}
+
+.booking-summary .eyebrow {
+    color: #b18d55;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.booking-summary h2 {
+    margin: 14px 0 10px;
+    color: #173f35;
+    font-family: "Playfair Display", serif;
+    font-size: 32px;
+}
+
+.booking-summary h2 span {
+    color: #b18d55;
+}
+
+.booking-summary > p {
+    color: #73776e;
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+.booking-details {
+    margin-top: 28px;
+    padding: 10px 25px;
+    background: #fffdf8;
+    border: 1px solid #e4dfd3;
+    border-radius: 10px;
+}
+
+.booking-detail-row,
+.booking-detail-total {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    padding: 17px 0;
+    border-bottom: 1px solid #eae6dc;
+    font-size: 13px;
+}
+
+.booking-detail-row span,
+.booking-detail-total span {
+    color: #73776e;
+}
+
+.booking-detail-row strong {
+    color: #173f35;
+    text-align: right;
+}
+
+.booking-detail-total {
+    border-bottom: none;
+    padding-top: 23px;
+}
+
+.booking-detail-total strong {
+    color: #173f35;
+    font-size: 25px;
+}
+
+.booking-summary .primary-button {
+    width: 100%;
+    margin-top: 25px;
+    padding: 16px;
+    border: none;
+    border-radius: 5px;
+    background: #173f35;
+    color: white;
+    font-family: "DM Sans", sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.booking-summary .primary-button:hover {
+    background: #102e27;
+    transform: translateY(-2px);
+}
+
+.booking-summary .booking-note {
+    margin-top: 15px;
+    text-align: center;
+    font-size: 11px;
+    color: #85877f;
+}
+
+@media (max-width: 550px) {
+    .booking-summary {
+        padding: 25px 18px;
+    }
+
+    .booking-summary h2 {
+        font-size: 27px;
+    }
+
+    .booking-details {
+        padding: 8px 15px;
+    }
+
+    .booking-detail-row,
+    .booking-detail-total {
+        font-size: 12px;
+        gap: 12px;
+    }
+
+    .booking-detail-total strong {
+        font-size: 21px;
+    }
+}
