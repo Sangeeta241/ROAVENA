@@ -1,0 +1,479 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="Explore destinations, discover experiences and create your personalised journey with ROAVENA.">
+
+    <title>Explore Destination | ROAVENA</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/destination.css">
+</head>
+
+<body>
+
+    <!-- NAVIGATION -->
+    <header class="navbar">
+
+        <a href="index.html" class="logo">
+            ROA<span>VENA</span>
+            <small>YOUR JOURNEY, YOUR WAY</small>
+        </a>
+
+        <nav class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="index.html#destinations">Destinations</a>
+            <a href="index.html#experiences">Experiences</a>
+            <a href="index.html#about">About</a>
+        </nav>
+
+        <div class="nav-actions">
+            <a href="index.html#support" class="login-link">Support</a>
+            <a href="dashboard.html" class="nav-button">Plan a Trip ↗</a>
+        </div>
+
+    </header>
+
+
+    <main>
+
+        <!-- DESTINATION INTRO / COVER -->
+        <section class="mindmap-cover" id="destinationHero">
+
+            <div class="mindmap-cover-overlay"></div>
+
+            <div class="mindmap-cover-content">
+
+                <span class="eyebrow" id="destinationRegion">
+                    HIMACHAL PRADESH, INDIA
+                </span>
+
+                <h1 id="destinationName">Manali</h1>
+
+                <p id="destinationTagline">
+                    Where mountains meet unforgettable memories.
+                </p>
+
+                <a href="#destinationMindmap" class="primary-button">
+                    Explore the destination ↓
+                </a>
+
+            </div>
+
+            <div class="cover-bottom">
+                <span>ROAVENA DESTINATION STORIES</span>
+                <span id="destinationNumber">01 / DESTINATION</span>
+            </div>
+
+        </section>
+
+
+        <!-- INTRODUCTION -->
+        <section class="mindmap-introduction section-padding">
+
+            <div class="mindmap-intro-label">
+                <span class="eyebrow dark-eyebrow">A WORLD TO DISCOVER</span>
+                <span class="intro-decoration">✳</span>
+            </div>
+
+            <div class="mindmap-intro-content">
+
+                <h2 id="destinationHeading">
+                    Every place has a story.
+                    <span>Find yours here.</span>
+                </h2>
+
+                <p id="destinationDescription">
+                    Discover beautiful places, local experiences and
+                    memorable moments waiting to become part of your journey.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- INTERACTIVE DESTINATION MIND MAP -->
+        <section class="destination-mindmap-section section-padding"
+                 id="destinationMindmap">
+
+            <div class="mindmap-heading">
+
+                <span class="eyebrow dark-eyebrow">
+                    EXPLORE YOUR WAY
+                </span>
+
+                <h2>Discover the world of
+                    <span id="mindmapDestinationName">Manali.</span>
+                </h2>
+
+                <p>
+                    Start with the destination and follow the branches.
+                    Every connection reveals a new part of the journey.
+                </p>
+
+            </div>
+
+
+            <!-- MIND MAP AREA -->
+            <div class="mindmap-canvas">
+
+                <!-- CENTRAL DESTINATION NODE -->
+                <div class="mindmap-center">
+
+                    <div class="center-image">
+                        <img id="mindmapCenterImage"
+                             src=""
+                             alt="Destination landscape">
+                    </div>
+
+                    <div class="center-content">
+
+                        <span>YOUR DESTINATION</span>
+
+                        <h3 id="mindmapCenterName">MANALI</h3>
+
+                        <p id="mindmapCenterTagline">
+                            A journey waiting to happen.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- CONNECTED BRANCHES -->
+                <div class="mindmap-branches">
+
+                    <button class="mindmap-node explore-node"
+                            data-branch="explore"
+                            type="button">
+
+                        <span class="node-icon">⌖</span>
+
+                        <span class="node-text">
+                            <strong>Explore Places</strong>
+                            <small>Attractions & hidden gems</small>
+                        </span>
+
+                        <span class="node-arrow">↗</span>
+
+                    </button>
+
+
+                    <button class="mindmap-node experiences-node"
+                            data-branch="experiences"
+                            type="button">
+
+                        <span class="node-icon">✧</span>
+
+                        <span class="node-text">
+                            <strong>Experiences</strong>
+                            <small>Adventure, nature & more</small>
+                        </span>
+
+                        <span class="node-arrow">↗</span>
+
+                    </button>
+
+
+                    <button class="mindmap-node culture-node"
+                            data-branch="culture"
+                            type="button">
+
+                        <span class="node-icon">❀</span>
+
+                        <span class="node-text">
+                            <strong>Food & Culture</strong>
+                            <small>Local flavours & traditions</small>
+                        </span>
+
+                        <span class="node-arrow">↗</span>
+
+                    </button>
+
+                    <button class="mindmap-node hidden-gems-node"
+    data-branch="hidden-gems"
+    type="button">
+
+    <span class="node-icon">✦</span>
+
+    <span class="node-text">
+        <strong>Hidden Gems</strong>
+        <small>Secret spots & local favourites</small>
+    </span>
+
+    <span class="node-arrow">↗</span>
+
+</button>
+
+                    <button class="mindmap-node stay-node"
+                            data-branch="stay"
+                            type="button">
+
+                        <span class="node-icon">⌂</span>
+
+                        <span class="node-text">
+                            <strong>Where to Stay</strong>
+                            <small>Hotels & accommodation</small>
+                        </span>
+
+                        <span class="node-arrow">↗</span>
+
+                    </button>
+
+
+                    <button class="mindmap-node transport-node"
+                            data-branch="transport"
+                            type="button">
+
+                        <span class="node-icon">➜</span>
+
+                        <span class="node-text">
+                            <strong>Getting There</strong>
+                            <small>Train, flight, bus & cab</small>
+                        </span>
+
+                        <span class="node-arrow">↗</span>
+
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <p class="mindmap-hint">
+                ✦ Select any connected branch to discover more
+            </p>
+
+
+            <!-- BRANCH DETAILS PANEL -->
+            <div class="branch-details" id="branchDetails" hidden>
+
+                <div class="branch-details-header">
+
+                    <div>
+                        <span class="eyebrow dark-eyebrow"
+                              id="branchEyebrow">
+                            DISCOVER MORE
+                        </span>
+
+                        <h3 id="branchTitle">Explore Places</h3>
+                    </div>
+
+                    <button type="button"
+                            class="branch-close"
+                            id="closeBranchBtn"
+                            aria-label="Close branch details">
+                        ×
+                    </button>
+
+                </div>
+
+
+                <p id="branchDescription">
+                    Discover the highlights of this destination.
+                </p>
+
+
+                <!-- JavaScript will add branch content here -->
+                <div class="branch-content" id="branchContent">
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- QUICK DESTINATION GUIDE -->
+        <section class="destination-guide-section section-padding">
+
+            <div class="section-heading">
+
+                <span class="eyebrow dark-eyebrow">
+                    BEFORE YOU GO
+                </span>
+
+                <h2>A little guide for
+                    <span>your journey.</span>
+                </h2>
+
+            </div>
+
+
+            <div class="guide-facts">
+
+                <div class="guide-fact">
+                    <span>BEST TIME TO VISIT</span>
+                    <h3 id="bestTime">March – June</h3>
+                </div>
+
+                <div class="guide-fact">
+                    <span>SUGGESTED DURATION</span>
+                    <h3 id="duration">4–5 Days</h3>
+                </div>
+
+                <div class="guide-fact">
+                    <span>ESTIMATED BUDGET</span>
+                    <h3 id="budget">₹8,000 onwards</h3>
+                </div>
+
+            </div>
+
+            <p class="budget-note">
+                *Budget figures are indicative estimates and may vary
+                according to season, travel choices and accommodation.
+            </p>
+
+        </section>
+
+
+        <!-- PERSONALISE YOUR JOURNEY -->
+        <section class="travel-mood-section section-padding">
+
+            <div class="mood-heading">
+
+                <span class="eyebrow">MAKE IT PERSONAL</span>
+
+                <h2>What kind of journey
+                    <span>are you dreaming of?</span>
+                </h2>
+
+                <p>
+                    Choose your travel mood and make this destination
+                    feel more like your own.
+                </p>
+
+            </div>
+
+
+            <div class="mood-grid">
+
+                <button class="mood-card"
+                        data-mood="Adventure"
+                        type="button">
+
+                    <span class="mood-icon">⛰</span>
+                    <strong>Adventure</strong>
+                    <small>For the thrill seekers</small>
+
+                </button>
+
+
+                <button class="mood-card"
+                        data-mood="Peaceful getaway"
+                        type="button">
+
+                    <span class="mood-icon">☁</span>
+                    <strong>Peaceful Getaway</strong>
+                    <small>Slow down and unwind</small>
+
+                </button>
+
+
+                <button class="mood-card"
+                        data-mood="Family vacation"
+                        type="button">
+
+                    <span class="mood-icon">⌂</span>
+                    <strong>Family Vacation</strong>
+                    <small>Memories together</small>
+
+                </button>
+
+
+                <button class="mood-card"
+                        data-mood="Nature"
+                        type="button">
+
+                    <span class="mood-icon">✿</span>
+                    <strong>Nature Escape</strong>
+                    <small>Closer to nature</small>
+
+                </button>
+
+            </div>
+
+
+            <p class="mood-message"
+               id="moodMessage"
+               aria-live="polite">
+                Select a mood to personalise your journey.
+            </p>
+
+        </section>
+
+
+        <!-- FINAL PLAN SECTION -->
+        <section class="plan-trip-section section-padding">
+
+            <div class="plan-trip-content">
+
+                <span class="eyebrow">YOUR JOURNEY, YOUR WAY</span>
+
+                <h2>Your next story
+                    <span>starts here.</span>
+                </h2>
+
+                <p>
+                    Turn the places and experiences you discovered
+                    into a personalised trip. Choose your dates,
+                    travellers and travel preferences to get started.
+                </p>
+
+                <a href="dashboard.html"
+                   class="primary-button"
+                   id="planTripBtn">
+                    Create My Journey ↗
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+    <footer class="footer">
+
+        <div class="footer-top">
+
+            <a href="index.html" class="logo footer-logo">
+                ROA<span>VENA</span>
+                <small>YOUR JOURNEY, YOUR WAY</small>
+            </a>
+
+            <p>Discover. Plan. Experience.</p>
+
+        </div>
+
+        <div class="footer-bottom">
+
+            <span>
+                © <span id="year"></span> ROAVENA.
+                All rights reserved.
+            </span>
+
+            <a href="index.html">Back to Home ↑</a>
+
+        </div>
+
+    </footer>
+
+
+    <script src="js/destination.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,589 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Plan Your Journey | ROAVENA</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+</head>
+
+<body>
+
+    <!-- NAVIGATION -->
+
+    <header class="navbar">
+
+        <a href="index.html" class="logo">
+            ROAVENA<span>.</span>
+        </a>
+
+        <nav class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="index.html#destinations">Destinations</a>
+            <a href="index.html#about">About</a>
+            <a href="index.html#support">Support</a>
+            <a href="bookings.html">My Bookings</a>
+        </nav>
+
+        <div class="nav-actions">
+            <span class="planning-label">YOUR JOURNEY STARTS HERE</span>
+            <button onclick="roavenaLogout()">Logout</button>
+        </div>
+
+    </header>
+
+
+    <!-- PAGE INTRODUCTION -->
+
+    <main class="trip-builder-page">
+
+        <section class="builder-hero">
+
+            <span class="eyebrow">DESIGNED AROUND YOU</span>
+
+            <h1>Let's plan your <span>next journey.</span></h1>
+
+            <p>
+                Tell us what you have in mind. We'll help you
+                shape your travel experience, one detail at a time.
+            </p>
+
+            <div class="builder-progress">
+                <span class="progress-line"></span>
+                <span>01 — YOUR TRIP DETAILS</span>
+            </div>
+
+        </section>
+
+
+        <!-- TRIP FORM -->
+
+        <section class="trip-form-section">
+
+            <form id="tripForm">
+
+                <!-- DESTINATION DETAILS -->
+
+                <div class="form-section-heading">
+
+                    <span>01</span>
+
+                    <div>
+                        <h2>The destination</h2>
+                        <p>Where would you like your journey to begin?</p>
+                    </div>
+
+                </div>
+
+
+                <div class="form-grid">
+
+    <!-- STARTING CITY -->
+
+    <div class="form-group">
+
+        <label for="origin">Starting City</label>
+
+        <input
+            type="text"
+            id="origin"
+            name="origin"
+            placeholder="Enter your starting city"
+            required
+        >
+
+    </div>
+
+
+    <!-- DESTINATION DROPDOWN -->
+
+    <div class="form-group">
+
+        <label for="destination">Your Destination</label>
+
+        <select
+            id="destination"
+            name="destination"
+            required
+        >
+            <option value="">Select your destination</option>
+        </select>
+
+    </div>
+
+</div>
+
+                        
+
+                <!-- DATE AND TRAVELLERS -->
+
+                <div class="form-section-heading">
+
+                    <span>02</span>
+
+                    <div>
+                        <h2>When & with whom?</h2>
+                        <p>Set your travel dates and group size.</p>
+                    </div>
+
+                </div>
+
+
+                <div class="form-grid">
+
+                    <div class="form-group">
+
+                        <label for="startDate">Departure Date</label>
+
+                        <input
+                            type="date"
+                            id="startDate"
+                            name="startDate"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="endDate">Return Date</label>
+
+                        <input
+                            type="date"
+                            id="endDate"
+                            name="endDate"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="travellers">Number of Travellers</label>
+
+                        <input
+                            type="number"
+                            id="travellers"
+                            name="travellers"
+                            min="1"
+                            max="30"
+                            value="2"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="tripType">Who are you travelling with?</label>
+
+                        <select id="tripType" name="tripType" required>
+
+                            <option value="">Choose an option</option>
+                            <option value="Solo">Solo</option>
+                            <option value="Family">Family</option>
+                            <option value="Friends">Friends</option>
+                            <option value="Couple">Couple</option>
+                            <option value="Group">Group</option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+
+                <!-- TRANSPORT -->
+
+                <div class="form-section-heading">
+
+                    <span>03</span>
+
+                    <div>
+                        <h2>How would you travel?</h2>
+                        <p>Choose your preferred mode of transportation.</p>
+                    </div>
+
+                </div>
+
+
+                <div class="form-group full-width">
+
+                    <label for="transport">Preferred Transport</label>
+
+                    <select id="transport" name="transport" required>
+
+                        <option value="">Select transportation</option>
+                        <option value="Flight">Flight</option>
+                        <option value="Train">Train</option>
+                        <option value="Bus">Bus</option>
+                        <option value="Cab">Cab / Car</option>
+                        <option value="Not Decided">Not decided yet</option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- ACCOMMODATION -->
+
+                <div class="form-section-heading">
+
+                    <span>04</span>
+
+                    <div>
+                        <h2>Find your stay</h2>
+                        <p>Choose the kind of accommodation you prefer.</p>
+                    </div>
+
+                </div>
+
+
+                <div class="form-grid">
+
+                    <div class="form-group">
+
+                        <label for="accommodation">Stay Preference</label>
+
+                        <select id="accommodation" name="accommodation" required>
+
+                            <option value="">Choose accommodation</option>
+                            <option value="Budget Hotel">Budget Hotel</option>
+                            <option value="Standard Hotel">Standard Hotel</option>
+                            <option value="Luxury Hotel">Luxury Hotel</option>
+                            <option value="Homestay">Homestay</option>
+                            <option value="Resort">Resort</option>
+                            <option value="Not Decided">Not decided yet</option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="budget">Estimated Budget Per Person</label>
+
+                        <select id="budget" name="budget" required>
+
+                            <option value="">Select your budget</option>
+                            <option value="Below ₹5,000">Below ₹5,000</option>
+                            <option value="₹5,000 – ₹10,000">₹5,000 – ₹10,000</option>
+                            <option value="₹10,000 – ₹20,000">₹10,000 – ₹20,000</option>
+                            <option value="₹20,000 – ₹40,000">₹20,000 – ₹40,000</option>
+                            <option value="Above ₹40,000">Above ₹40,000</option>
+                            <option value="Flexible">Flexible</option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ACTIVITIES -->
+
+                <div class="form-section-heading">
+
+                    <span>05</span>
+
+                    <div>
+                        <h2>Make it yours</h2>
+                        <p>What would you like to experience?</p>
+                    </div>
+
+                </div>
+
+
+                <div class="activity-options">
+
+                    <label class="activity-option">
+                        <input type="checkbox" name="activities" value="Adventure">
+                        <span>Adventure</span>
+                    </label>
+
+                    <label class="activity-option">
+                        <input type="checkbox" name="activities" value="Sightseeing">
+                        <span>Sightseeing</span>
+                    </label>
+
+                    <label class="activity-option">
+                        <input type="checkbox" name="activities" value="Nature">
+                        <span>Nature</span>
+                    </label>
+
+                    <label class="activity-option">
+                        <input type="checkbox" name="activities" value="Food">
+                        <span>Food & Local Culture</span>
+                    </label>
+
+                    <label class="activity-option">
+                        <input type="checkbox" name="activities" value="Shopping">
+                        <span>Shopping</span>
+                    </label>
+
+                    <label class="activity-option">
+                        <input type="checkbox" name="activities" value="Relaxation">
+                        <span>Relaxation</span>
+                    </label>
+
+                    <label class="activity-option">
+                        <input type="checkbox" name="activities" value="Photography">
+                        <span>Photography</span>
+                    </label>
+
+                    <label class="activity-option">
+                        <input type="checkbox" name="activities" value="Spiritual">
+                        <span>Spiritual Experiences</span>
+                    </label>
+
+                </div>
+
+
+                <!-- SPECIAL REQUESTS -->
+
+                <div class="form-section-heading">
+
+                    <span>06</span>
+
+                    <div>
+                        <h2>Anything else?</h2>
+                        <p>Share your preferences or special requirements.</p>
+                    </div>
+
+                </div>
+
+
+                <div class="form-group full-width">
+
+                    <label for="specialRequests">Additional Notes</label>
+
+                    <textarea
+                        id="specialRequests"
+                        name="specialRequests"
+                        rows="5"
+                        placeholder="Tell us about your preferences, places you want to visit, food choices or anything else..."
+                    ></textarea>
+
+                </div>
+
+
+                <!-- SUBMIT -->
+
+                <div class="form-submit-area">
+
+                    <p>
+                        Your trip details will be used to prepare
+                        a personalised travel plan.
+                    </p>
+
+                    <button type="submit" class="primary-button">
+                        Create My Travel Plan →
+                    </button>
+
+                </div>
+
+            </form>
+
+        </section>
+        
+
+<!-- =====================================
+     ROAVENA — DESTINATION TRAVEL OPTIONS
+===================================== -->
+
+<section class="travel-options-section" id="travelOptions" hidden>
+
+    <div class="travel-section-intro">
+        <span class="eyebrow">THE NEXT PART OF YOUR JOURNEY</span>
+        <h2>Explore <span>your destination.</span></h2>
+        <p id="destinationSubtitle">
+            Discover stays and travel options for your journey.
+        </p>
+    </div>
+
+    <!-- 07: HOTELS -->
+
+    <div class="travel-category">
+
+        <div class="travel-heading">
+            <span>07</span>
+            <div>
+                <h2>Stay at your destination</h2>
+                <p id="hotelSubtitle">Accommodation options for your destination.</p>
+            </div>
+        </div>
+
+        <div class="hotel-grid" id="hotelOptions"></div>
+
+    </div>
+
+    <!-- 08: INTERCITY TRANSPORT -->
+
+    <div class="travel-category">
+
+        <div class="travel-heading">
+            <span>08</span>
+            <div>
+                <h2>Reach your destination</h2>
+                <p id="intercitySubtitle">Travel options from your starting city.</p>
+            </div>
+        </div>
+
+        <div class="transport-grid" id="intercityOptions"></div>
+
+    </div>
+
+    <!-- 09: LOCAL TRANSPORT -->
+
+    <div class="travel-category">
+
+        <div class="travel-heading">
+            <span>09</span>
+            <div>
+                <h2>Explore around the destination</h2>
+                <p id="localTransportSubtitle">Local travel options for sightseeing.</p>
+            </div>
+        </div>
+
+        <div class="transport-grid" id="localTransportOptions"></div>
+
+    </div>
+
+    <!-- COST SUMMARY -->
+
+    <div class="trip-cost-summary">
+
+        <span class="eyebrow">YOUR JOURNEY AT A GLANCE</span>
+
+        <h2>Estimated trip subtotal</h2>
+
+        <div class="cost-row">
+            <span>Accommodation</span>
+            <strong id="hotelCost">₹0</strong>
+        </div>
+
+        <div class="cost-row">
+            <span>Intercity Transportation</span>
+            <strong id="transportCost">₹0</strong>
+        </div>
+
+        <div class="cost-row">
+            <span>Local Transportation</span>
+            <strong id="localTransportCost">₹0</strong>
+        </div>
+
+        <div class="cost-total">
+    <span>Estimated Total</span>
+    <strong id="totalCost">₹0</strong>
+</div>
+
+        <p class="cost-disclaimer">
+            These are illustrative estimated prices, not live booking
+            quotes. Actual costs may vary.
+        </p>
+
+    </div>
+<!-- =====================================
+     ROAVENA — BOOKING SUMMARY
+===================================== -->
+
+<div class="booking-summary" id="bookingSummary">
+
+    <span class="eyebrow">ALMOST READY</span>
+
+    <h2>Review your <span>journey.</span></h2>
+
+    <p>Check your selected travel details before confirming.</p>
+
+    <div class="booking-details">
+
+        <div class="booking-detail-row">
+            <span>Journey</span>
+            <strong id="summaryRoute">—</strong>
+        </div>
+
+        <div class="booking-detail-row">
+            <span>Travel Dates</span>
+            <strong id="summaryDates">—</strong>
+        </div>
+
+        <div class="booking-detail-row">
+            <span>Travellers</span>
+            <strong id="summaryTravellers">—</strong>
+        </div>
+
+        <div class="booking-detail-row">
+            <span>Hotel</span>
+            <strong id="summaryHotel">Not selected</strong>
+        </div>
+
+        <div class="booking-detail-row">
+            <span>Intercity Transport</span>
+            <strong id="summaryTransport">Not selected</strong>
+        </div>
+
+        <div class="booking-detail-row">
+            <span>Local Transport</span>
+            <strong id="summaryLocal">Not selected</strong>
+        </div>
+
+        <div class="booking-detail-total">
+            <span>Estimated Trip Total</span>
+            <strong id="summaryTotal">₹0</strong>
+        </div>
+
+    </div>
+
+    <button type="button" class="primary-button" id="confirmTripButton">
+        Confirm My Trip →
+    </button>
+
+    <p class="booking-note">
+        This is a trip-plan confirmation for your project demo,
+        not an actual hotel or transport booking.
+    </p>
+
+</div>
+
+</section>
+
+ 
+
+    </main>
+
+
+    <!-- FOOTER -->
+
+    <footer class="footer">
+
+        <div class="footer-bottom">
+            <p>
+                © <span id="year"></span> ROAVENA.
+                Your Journey, Your Way.
+            </p>
+        </div>
+
+    </footer>
+
+
+    <script src="js/storage.js"></script>
+<script src="js/dashboard.js"></script>
+<script src="js/travel-options.js"></script>
+<script src="js/auth.js"></script>
+</body>
+
+</html>

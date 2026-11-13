@@ -1,0 +1,96 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Bookings | ROAVENA</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/bookings.css">
+</head>
+<body>
+
+<header class="navbar">
+    <a href="index.html" class="logo">ROAVENA<span>.</span></a>
+
+    <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="index.html#destinations">Destinations</a>
+        <a href="index.html#about">About</a>
+        <a href="index.html#support">Support</a>
+        <a href="bookings.html">My Bookings</a>
+    </nav>
+
+    <div class="nav-actions">
+        <span class="planning-label">YOUR JOURNEY, YOUR WAY</span>
+    </div>
+</header>
+
+<main class="bookings-page">
+
+    <section class="bookings-hero">
+        <span class="eyebrow">YOUR TRAVEL COLLECTION</span>
+        <h1>Every journey has a <span>story.</span></h1>
+        <p>All your planned journeys, together in one place.</p>
+    </section>
+
+    <section class="bookings-content">
+
+        <div class="bookings-heading">
+            <div>
+                <span class="eyebrow">YOUR TRAVEL PLANS</span>
+                <h2>My Bookings</h2>
+            </div>
+
+            <a href="dashboard.html" class="new-trip-button">
+                + Plan a New Trip
+            </a>
+        </div>
+
+        <div class="booking-stats">
+            <div class="stat-card">
+                <span>Total Bookings</span>
+                <strong id="totalBookings">0</strong>
+            </div>
+
+            <div class="stat-card">
+                <span>Destinations</span>
+                <strong id="totalDestinations">0</strong>
+            </div>
+
+            <div class="stat-card">
+                <span>Estimated Spending</span>
+                <strong id="totalSpending">₹0</strong>
+            </div>
+        </div>
+
+        <div id="bookingsList" class="bookings-list"></div>
+
+        <div id="emptyBookings" class="empty-bookings" hidden>
+            <h2>Your next adventure awaits.</h2>
+            <p>You haven't confirmed any trip plans yet.</p>
+            <a href="dashboard.html" class="new-trip-button">
+                Plan Your First Trip →
+            </a>
+        </div>
+
+    </section>
+</main>
+
+<footer class="footer">
+    <div class="footer-bottom">
+        <p>© <span id="year"></span> ROAVENA. Your Journey, Your Way.</p>
+    </div>
+</footer>
+
+<script src="js/storage.js"></script>
+<script src="js/bookings.js"></script>
+
+
+</body>
+</html>

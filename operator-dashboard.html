@@ -1,0 +1,114 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Operator Dashboard | ROAVENA</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/operator-dashboard.css">
+</head>
+
+<body>
+
+<header class="navbar">
+    <a href="index.html" class="logo">ROAVENA<span>.</span></a>
+
+    <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="bookings.html">Customer Bookings</a>
+        <a href="dashboard.html">Plan a Trip</a>
+    </nav>
+
+    <div class="nav-actions">
+        <span class="planning-label">OPERATOR PANEL</span>
+        <button onclick="roavenaLogout()">Logout</button>
+    </div>
+</header>
+
+<main class="operator-page">
+
+    <section class="operator-hero">
+        <span class="eyebrow">ROAVENA MANAGEMENT</span>
+        <h1>Operator <span>Dashboard.</span></h1>
+        <p>Manage customer journeys, monitor bookings and review traveller feedback.</p>
+    </section>
+
+    <section class="operator-stats">
+
+        <article class="operator-stat">
+            <span>Total Bookings</span>
+            <strong id="opTotalBookings">0</strong>
+        </article>
+
+        <article class="operator-stat">
+            <span>Destinations</span>
+            <strong id="opDestinations">0</strong>
+        </article>
+
+        <article class="operator-stat">
+            <span>Estimated Revenue</span>
+            <strong id="opRevenue">₹0</strong>
+        </article>
+
+        <article class="operator-stat">
+            <span>Feedback Received</span>
+            <strong id="opFeedback">0</strong>
+        </article>
+
+    </section>
+
+    <section class="operator-bookings">
+
+        <div class="operator-section-heading">
+            <div>
+                <span class="eyebrow">BOOKING MANAGEMENT</span>
+                <h2>Customer Bookings</h2>
+            </div>
+
+            <a href="bookings.html">View customer page →</a>
+        </div>
+
+        <div class="operator-controls">
+            <input
+                type="search"
+                id="operatorSearch"
+                placeholder="Search destination or booking ID..."
+            >
+
+            <select id="operatorStatusFilter">
+                <option value="all">All Statuses</option>
+                <option value="Confirmed">Confirmed</option>
+                <option value="Pending">Pending</option>
+                <option value="Cancelled">Cancelled</option>
+            </select>
+        </div>
+
+        <div id="operatorBookingsList"></div>
+
+        <div id="operatorEmpty" class="operator-empty" hidden>
+            <h3>No bookings found</h3>
+            <p>Customer bookings will appear here when trips are confirmed.</p>
+        </div>
+
+    </section>
+
+</main>
+
+<footer class="footer">
+    <div class="footer-bottom">
+        <p>© <span id="year"></span> ROAVENA. Your Journey, Your Way.</p>
+    </div>
+</footer>
+
+<script src="js/operator-dashboard.js"></script>
+<script src="js/auth.js"></script>
+
+</body>
+</html>
